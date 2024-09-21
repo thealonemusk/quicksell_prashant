@@ -1,0 +1,117 @@
+.card__container{
+    width: 100%;
+    padding: 1rem;
+    border-radius: 0.5rem;
+    border: 1px solid #ccc;
+    box-shadow: 0px 2px 8px 1px #ccc;
+    background-color: #fff;
+    margin-bottom: 1rem;
+    cursor: pointer;
+}
+.cardID__wrapper{
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+}
+.cardID{
+    color: #808184;
+    font-size: 0.95rem;
+    font-weight: 500;
+}
+.card__profile{
+    height: 26px;
+    width: 26px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    background-color: #b06e0c;
+    border-radius: 50%;
+    font-size: 0.8rem;
+    position: relative;
+}
+.card__profile-initial{
+    text-transform: uppercase;
+}
+
+.card__heading{
+    display: flex;
+    margin-top: 0.5rem;
+}
+
+.card__icon{
+    margin-right: 0.5rem;
+}
+.card__profile-available{
+    height: 12px;
+    width: 12px;
+    background-color: #dfe4e9;
+    border: 1.5px solid #fff;
+    position: absolute;
+    z-index: 0;
+    border-radius: 50%;
+    left: 70%;
+    top: 70%;
+}
+.card__profile__available-true{
+    background-color: rgb(72, 223, 12);
+}
+.card__title{
+    font-size: 1rem;
+    font-weight: 600;
+    color: #000;
+
+}
+.card__tag{
+    display: flex;
+    align-items: center;
+    margin-top: 0.8rem;
+}
+.card__tag-icon{
+    border: 1px solid #dfe4e9;
+    border-radius: 0.3rem;
+    width: fit-content;
+    height: 32px;
+    display: flex;
+    align-items: center;
+    margin-right: 0.5rem;
+    padding: 0.3rem;
+}
+
+.card__heading-icon {
+    border-radius: 0.3rem;
+    width: fit-content;
+    height: 32px;
+    margin-right: 0.7rem;
+    display: flex;
+    align-items: center;
+}
+
+.card__heading-icon  > img {
+    width: 1.5rem;
+}
+
+.card__tag-box{
+    border: 1px solid #dfe4e9;
+    padding: 0.3rem;
+    border-radius: 0.3rem;
+    width: fit-content;
+    height: 32px;
+}
+.card__tag-title{
+    font-size: 0.85rem;
+    font-weight: 500;
+    color: #808184;
+}
+.card__tag-title::before{
+    display: inline-block;
+    content: " ";
+    height: 10px;
+    width: 10px;
+    background-color: #c0c0c8;
+    border-radius: 50%;
+    margin-right: 0.2rem;
+}
+
+
+

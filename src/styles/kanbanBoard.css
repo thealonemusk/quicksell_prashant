@@ -1,0 +1,36 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.Details__board {
+  width: 100%;
+  background-color: #f0f1f4;
+}
+
+.Details__board__lists {
+  display: flex;
+}
+
+@media (max-width: 768px) {
+  .Details__board__lists {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 1em;
+  }
+}
+
+@media (max-width: 500px) {
+  .Details__board {
+    padding: 1rem;
+  }
+
+  .Details__board__lists {
+    gap: 0.5rem;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+}
