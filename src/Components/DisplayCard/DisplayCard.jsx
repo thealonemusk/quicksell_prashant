@@ -1,6 +1,6 @@
 import PropTypes from "prop-types";
 import * as icons from "../../Assets/Icons";
-import "../Styles/DisplayCard.css"
+import "../../Styles/DisplayCard.css"
 
 const PRIORITY_ICONS = {
   0: icons.noPriority,

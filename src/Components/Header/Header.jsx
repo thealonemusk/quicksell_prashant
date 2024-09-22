@@ -1,8 +1,7 @@
 import { useState } from 'react';
 import PropTypes from 'prop-types';
 import * as icons from "../../Assets/Icons";
-import "../Styles/Header.css";
-
+import "../../Styles/Header.css";
 const Header = ({ groupValue, orderValue, onGroupValueChange, onOrderValueChange }) => {
   const [isFilterOpen, setIsFilterOpen] = useState(false);
 

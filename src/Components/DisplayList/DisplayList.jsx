@@ -1,8 +1,7 @@
 import PropTypes from "prop-types";
 import * as icons from "../../Assets/Icons";
-import "../Styles/DisplayList.css";
 import DisplayCard from "../DisplayCard/DisplayCard";
-
+import "../../Styles/DisplayList.css";
 
 const DisplayList = ({ groupValue, listTitle, priorityList, ticketDetails }) => {
   const getIcon = () => {
