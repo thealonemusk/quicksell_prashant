@@ -1,50 +1,79 @@
-import { getIconForStatus, getPriorityIcon } from "../utils/helpers"; // Assuming we have these helper functions
-import "../styles/DisplayList.css";
-import DisplayCard from "./displayCard";
-const DisplayList = (title, groupBy, items, priorities) => {
-  const filteredItems = items.filter((item) => {
-    if (groupBy === "status") return item.status === title;
-    if (groupBy === "priority") return item.priority.toString() === title;
-    if (groupBy === "user") return item.user.name === title;
+import PropTypes from "prop-types";
+import * as icons from "../Assets/Icons";
+import "../Styles/DisplayList.css";
+import DisplayCard from "./DisplayCard";
+
+const DisplayList = ({ groupValue, listTitle, priorityList, ticketDetails }) => {
+  const getIcon = () => {
+    const iconMap = {
+      status: {
+        Todo: icons.todo,
+        Backlog: icons.backlog,
+        "In progress": icons.inProgress,
+        Done: icons.done,
+        Cancelled: icons.cancelled,
+      },
+      priority: {
+        0: icons.noPriority,
+        1: icons.lowPriority,
+        2: icons.mediumPriority,
+        3: icons.highPriority,
+        4: icons.UrgentPriorityColour,
+      },
+    };
+
+    return iconMap[groupValue]?.[listTitle] || null;
+  };
+
+  const getTitle = () => {
+    if (groupValue === "priority") {
+      return priorityList?.find(p => p.priority === Number(listTitle))?.name || listTitle;
+    }
+    return listTitle;
+  };
+
+  const filteredTickets = ticketDetails.filter(ticket => {
+    if (groupValue === "status") return ticket.status === listTitle;
+    if (groupValue === "priority") return ticket.priority === Number(listTitle);
+    if (groupValue === "user") return ticket.userObj.name === listTitle;
     return false;
   });
 
-  const getListIcon = () => {
-    if (groupBy === "status") return getIconForStatus(title);
-    if (groupBy === "priority") return getPriorityIcon(title);
-    return null;
-  };
-
-  const getListTitle = () => {
-    if (groupBy === "priority") {
-      const priorityItem = priorities.find((p) => p.level.toString() === title);
-      return priorityItem ? priorityItem.name : title;
-    }
-    return title;
-  };
-
+  // console.log(filteredTickets);
   return (
-    <div className="list">
+    <div className="list-container">
       <div className="list-header">
         <div className="list-header-left">
-          {getListIcon() && (
-            <img src={getListIcon()} alt={title} className="list-icon" />
-          )}
-          <h3 className="list-title">{getListTitle()}</h3>
-          <span className="list-count">{filteredItems.length}</span>
+          {getIcon() && <img src={getIcon()} alt={getTitle()} className="list-icon" />}
+          <h2 className="list-title">{getTitle()}</h2>
+          <span className="list-count">{filteredTickets.length}</span>
         </div>
         <div className="list-header-right">
-          <button className="add-item">+</button>
-          <button className="list-options">⋮</button>
+          <button className="list-add-item">
+            <img src={icons.add} alt="Add" />
+          </button>
+          <button className="list-option-item">
+            <img src={icons.dotMenu} alt="Options" />
+          </button>
         </div>
       </div>
-      <div className="list-items">
-        {filteredItems.map((item) => (
-          <DisplayCard key={item.id} {...item} />
+      <div className="list-card-items">
+        {filteredTickets.map(ticket => (
+          <DisplayCard key={ticket.id} cardDetails={ticket} />
         ))}
       </div>
     </div>
   );
+};
+
+DisplayList.propTypes = {
+  groupValue: PropTypes.oneOf(["status", "user", "priority"]).isRequired,
+  listTitle: PropTypes.string.isRequired,
+  priorityList: PropTypes.arrayOf(PropTypes.shape({
+    name: PropTypes.string.isRequired,
+    priority: PropTypes.number.isRequired,
+  })),
+  ticketDetails: PropTypes.arrayOf(PropTypes.object).isRequired,
 };
 
 export default DisplayList;

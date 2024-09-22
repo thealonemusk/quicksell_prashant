@@ -1,70 +1,60 @@
-.list__container{
-    width: 360px;
-    margin-left: 4.1rem;
-}
-.list__container:last-child{
-    margin-right: 2.5rem;
-}
-.list__header{
+.list-container {
+    flex: 1;
+    min-width: 280px;
+    max-width: 320px;
+    margin-right: 1rem;
+    padding: 0.5rem;
+    background-color: var(--background-color);
+  }
+  
+  .list-header {
     display: flex;
-    align-items: center;
     justify-content: space-between;
-    padding: 1.5rem 0rem;
-}
-.list__header-left, .list__header-right{
+    align-items: center;
+    margin-bottom: 1rem;
+    padding: 0.5rem 0;
+  }
+  
+  .list-header-left {
     display: flex;
     align-items: center;
-}
-.list__icon{
+  }
+  
+  .list-icon {
+    width: 16px;
+    height: 16px;
     margin-right: 0.5rem;
-    display: flex;
-    align-items: center;
-}
-.list__icon > img {
-    width : 1.5rem;
-}
-.list__title{
-    margin-right: 0.7rem;
+  }
+  
+  .list-title {
     font-weight: 600;
-    font-size: 1rem;
-}
-.list__add-item{
-    margin-right: 0.5rem;
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+  }
+  
+  .list-count {
+    margin-left: 0.5rem;
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+  }
+  
+  .list-header-right button {
+    background: none;
+    border: none;
     cursor: pointer;
-    color: #808184;
-}
-.list__add-item > img{
-    width: 1.5rem; 
-}
-.list__option-item{
-    margin-right: 0.5rem;
-    cursor: pointer;
-    color: #808184;
-}
-
-.list__option-item > img {
-    width: 1.5rem;
-}
-.list__card-items{
-    width: 100%;
-}
-
-@media (max-width: 768px) {
-    .list__container {
-        width: 95%;
-        margin-left: 3em;
-        margin-right: 3em;
+    color: var(--text-secondary);
+  }
+  
+  .list-card-items {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+  
+  @media (max-width: 768px) {
+    .list-container {
+      max-width: 100%;
+      margin-right: 0;
+      margin-bottom: 1rem;
     }
-
-    .list__header {
-        flex-direction: row;
-    }
-
-    .list__header-left, .list__header-right {
-        margin-bottom: 0.5rem;
-    }
-
-    .list__title {
-        font-size: 1.1rem;
-    }
-}
+  }

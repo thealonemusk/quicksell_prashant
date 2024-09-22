@@ -1,13 +1,11 @@
-import './App.css'
-import KanbanBoard from './kanbanBoard'
+import HomePage from "./HomePage";
 
 function App() {
-
   return (
-    <>
-    <KanbanBoard/>
-    </>
-  )
+    <div className="App">
+      <HomePage />
+    </div>
+  );
 }
 
-export default App
+export default App;
