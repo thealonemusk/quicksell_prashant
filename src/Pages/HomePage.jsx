@@ -1,9 +1,8 @@
 import  { useState, useEffect, useCallback } from "react";
 import axios from "axios";
-import DisplayList from "../Components/displayList";
 import "../Styles/Kanban";
-import Navbar from "../Components/navbar";
-
+import DisplayList from "../Components/DisplayList/DisplayList";
+import Header from "../Components/Header/Header";
 
 
 const PRIORITY_NAMES = {
@@ -67,7 +66,7 @@ const KanbanBoard = () => {
 
   return (
     <>
-      <Navbar
+      <Header
         groupValue={groupValue}
         orderValue={orderValue}
         onGroupValueChange={setGroupValue}

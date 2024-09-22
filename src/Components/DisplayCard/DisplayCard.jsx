@@ -1,5 +1,5 @@
 import PropTypes from "prop-types";
-import * as icons from "../Assets/Icons";
+import * as icons from "../../Assets/Icons";
 import "../Styles/DisplayCard.css"
 
 const PRIORITY_ICONS = {

@@ -1,9 +1,9 @@
 import { useState } from 'react';
 import PropTypes from 'prop-types';
-import * as icons from "../Assets/Icons";
+import * as icons from "../../Assets/Icons";
 import "../Styles/Header.css";
 
-const Navbar = ({ groupValue, orderValue, onGroupValueChange, onOrderValueChange }) => {
+const Header = ({ groupValue, orderValue, onGroupValueChange, onOrderValueChange }) => {
   const [isFilterOpen, setIsFilterOpen] = useState(false);
 
   const handleFilterToggle = () => setIsFilterOpen(!isFilterOpen);
@@ -50,11 +50,11 @@ const Navbar = ({ groupValue, orderValue, onGroupValueChange, onOrderValueChange
   );
 };
 
-Navbar.propTypes = {
+Header.propTypes = {
   groupValue: PropTypes.string.isRequired,
   orderValue: PropTypes.string.isRequired,
   onGroupValueChange: PropTypes.func.isRequired,
   onOrderValueChange: PropTypes.func.isRequired,
 };
 
-export default Navbar;
+export default Header;
