@@ -2,7 +2,7 @@ import  { useState, useEffect, useCallback } from "react";
 import axios from "axios";
 import DisplayList from "../Components/DisplayList/DisplayList";
 import Header from "../Components/Header/Header";
-import "../Styles/Kanban.css"
+import "../Styles/HomePage.css"
 
 const PRIORITY_NAMES = {
   0: "No priority",
