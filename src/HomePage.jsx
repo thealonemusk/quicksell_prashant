@@ -1,7 +1,7 @@
 import  { useState, useEffect, useCallback } from "react";
 import axios from "axios";
-import Header from "./Components/Header";
-import DisplayList from "./components/displayList";
+import Header from "./Components/Header"
+import DisplayList from "./Components/displayList";
 import "./Styles/KanbanBoard.css";
 
 const PRIORITY_NAMES = {
