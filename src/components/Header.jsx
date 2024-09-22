@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import * as icons from "../Assets/Icons";
 import "../Styles/Header.css";
 
-const Header = ({ groupValue, orderValue, onGroupValueChange, onOrderValueChange }) => {
+const Navbar = ({ groupValue, orderValue, onGroupValueChange, onOrderValueChange }) => {
   const [isFilterOpen, setIsFilterOpen] = useState(false);
 
   const handleFilterToggle = () => setIsFilterOpen(!isFilterOpen);
@@ -50,11 +50,11 @@ const Header = ({ groupValue, orderValue, onGroupValueChange, onOrderValueChange
   );
 };
 
-Header.propTypes = {
+Navbar.propTypes = {
   groupValue: PropTypes.string.isRequired,
   orderValue: PropTypes.string.isRequired,
   onGroupValueChange: PropTypes.func.isRequired,
   onOrderValueChange: PropTypes.func.isRequired,
 };
 
-export default Header;
+export default Navbar;
