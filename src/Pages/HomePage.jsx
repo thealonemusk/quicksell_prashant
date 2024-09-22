@@ -4,6 +4,8 @@ import DisplayList from "../Components/displayList";
 import "../Styles/Kanban";
 import Navbar from "../Components/navbar";
 
+
+
 const PRIORITY_NAMES = {
   0: "No priority",
   1: "Low",
