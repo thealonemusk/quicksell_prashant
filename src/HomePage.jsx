@@ -1,8 +1,8 @@
 import  { useState, useEffect, useCallback } from "react";
 import axios from "axios";
-import "./Styles/KanbanBoard.css";
 import Navbar from "./Components/Header";
 import DisplayList from "./Components/DisplayList";
+import "./Styles/Kanban";
 
 const PRIORITY_NAMES = {
   0: "No priority",
