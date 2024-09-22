@@ -1,8 +1,8 @@
 import  { useState, useEffect, useCallback } from "react";
 import axios from "axios";
-import Navbar from "../Components/Navbar";
 import DisplayList from "../Components/DisplayList";
-import "./Styles/Kanban";
+import "../Styles/Kanban";
+import Navbar from "../Components/Navbar";
 
 const PRIORITY_NAMES = {
   0: "No priority",
