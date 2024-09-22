@@ -1,6 +1,6 @@
 import  { useState, useEffect, useCallback } from "react";
 import axios from "axios";
-import Header from "./Components/Header"
+import Header from "./Components/Header";
 import DisplayList from "./Components/DisplayList";
 import "./Styles/KanbanBoard.css";
 
